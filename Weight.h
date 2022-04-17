@@ -37,8 +37,8 @@ private:
 public:
     // Defining the constructor of the class
     Weight() noexcept;
-    Weight(float newWeight);
-    Weight(UnitOfWeight newUnitOfWeight) noexcept;
+    explicit Weight(float newWeight);
+    explicit Weight(UnitOfWeight newUnitOfWeight) noexcept;
     Weight(float newWeight, UnitOfWeight newUnitOfWeight);
     Weight(float newWeight, float newMaxWeight);
     Weight(UnitOfWeight newUnitOfWeight, float newMaxWeight);
@@ -72,7 +72,7 @@ public:
 
     //Validator
     bool isWeightValid(float checkWeight) const noexcept;
-    bool isMaxWeightValid(float checkMaxWeight) const noexcept;
+    static bool isMaxWeightValid(float checkMaxWeight) noexcept;
     bool validate() const noexcept;
 
 
